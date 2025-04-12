@@ -1,4 +1,9 @@
-{{ config(materialized='view') }}
+{{ config(
+    materialized='view',
+    schema='public',
+    alias='stg_customers'
+) }}
+
 
 SELECT
     C_CUSTKEY      AS customer_id,

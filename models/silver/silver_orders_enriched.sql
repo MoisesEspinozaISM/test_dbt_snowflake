@@ -1,4 +1,9 @@
-{{ config(materialized='view') }}
+{{ config(
+    materialized='view',
+    schema='public',
+    alias='silver_orders_enriched'
+) }}
+
 
 SELECT
     o.order_id,

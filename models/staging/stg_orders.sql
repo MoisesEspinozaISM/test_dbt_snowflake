@@ -1,4 +1,9 @@
-{{ config(materialized='view') }}
+{{ config(
+    materialized='view',
+    schema='public',
+    alias='stg_orders'
+) }}
+
 
 SELECT
     O_ORDERKEY     AS order_id,
