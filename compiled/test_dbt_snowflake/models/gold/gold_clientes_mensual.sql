@@ -7,6 +7,6 @@ SELECT
     COUNT(order_id) AS total_pedidos,
     ROUND(SUM(total_price), 2) AS total_ventas,
     ROUND(AVG(total_price), 2) AS ticket_promedio
-FROM dbt_sandbox.silver.silver_orders_enriched
+FROM dbt_sandbox.public_silver.silver_orders_enriched
 GROUP BY 1, 2, 3
 ORDER BY 1, 3

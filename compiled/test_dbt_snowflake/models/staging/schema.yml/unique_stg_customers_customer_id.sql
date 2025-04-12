@@ -6,7 +6,7 @@ select
     customer_id as unique_field,
     count(*) as n_records
 
-from dbt_sandbox.staging.stg_customers
+from dbt_sandbox.public_staging.stg_customers
 where customer_id is not null
 group by customer_id
 having count(*) > 1
