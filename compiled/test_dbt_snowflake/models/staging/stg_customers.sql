@@ -1,5 +1,6 @@
 
 
+
 SELECT
     C_CUSTKEY      AS customer_id,
     C_NAME         AS customer_name,

@@ -1,8 +1,9 @@
 
-  create or replace   view dbt_sandbox.public.stg_orders
+  create or replace   view dbt_sandbox.default_public.stg_orders
   
    as (
     
+
 
 SELECT
     O_ORDERKEY     AS order_id,

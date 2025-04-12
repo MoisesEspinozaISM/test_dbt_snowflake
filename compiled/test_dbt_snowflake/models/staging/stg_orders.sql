@@ -1,5 +1,6 @@
 
 
+
 SELECT
     O_ORDERKEY     AS order_id,
     O_CUSTKEY      AS customer_id,

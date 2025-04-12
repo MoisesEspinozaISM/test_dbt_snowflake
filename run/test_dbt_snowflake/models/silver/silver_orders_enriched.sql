@@ -1,8 +1,9 @@
 
-  create or replace   view dbt_sandbox.public.silver_orders_enriched
+  create or replace   view dbt_sandbox.default_public.silver_orders_enriched
   
    as (
     
+
 
 SELECT
     o.order_id,
@@ -12,8 +13,8 @@ SELECT
     o.total_price,
     c.customer_name,
     c.nation_id
-FROM dbt_sandbox.public.stg_orders o
-LEFT JOIN dbt_sandbox.public.stg_customers c
+FROM dbt_sandbox.default_public.stg_orders o
+LEFT JOIN dbt_sandbox.default_public.stg_customers c
   ON o.customer_id = c.customer_id
   );
 

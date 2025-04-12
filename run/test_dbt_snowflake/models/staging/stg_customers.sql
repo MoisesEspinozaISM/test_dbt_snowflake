@@ -1,8 +1,9 @@
 
-  create or replace   view dbt_sandbox.public.stg_customers
+  create or replace   view dbt_sandbox.default_public.stg_customers
   
    as (
     
+
 
 SELECT
     C_CUSTKEY      AS customer_id,

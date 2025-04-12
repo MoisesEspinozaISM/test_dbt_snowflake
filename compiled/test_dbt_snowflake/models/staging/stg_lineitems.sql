@@ -1,5 +1,6 @@
 
 
+
 SELECT
     L_ORDERKEY     AS order_id,
     L_EXTENDEDPRICE AS extended_price,
