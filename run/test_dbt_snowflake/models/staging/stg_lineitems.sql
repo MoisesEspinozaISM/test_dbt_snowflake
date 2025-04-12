@@ -1,5 +1,5 @@
 
-  create or replace   view dbt_sandbox.default_public.stg_lineitems
+  create or replace   view dbt_sandbox.public_public.stg_lineitems
   
    as (
     
