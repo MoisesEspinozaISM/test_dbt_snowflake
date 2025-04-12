@@ -9,9 +9,9 @@ select
 
 
 
-select id
-from dbt_sandbox.public.my_second_dbt_model
-where id is null
+select order_id
+from dbt_sandbox.public.stg_orders
+where order_id is null
 
 
 

@@ -8,12 +8,12 @@ select
     
 
 select
-    id as unique_field,
+    order_id as unique_field,
     count(*) as n_records
 
-from dbt_sandbox.public.my_first_dbt_model
-where id is not null
-group by id
+from dbt_sandbox.public.stg_orders
+where order_id is not null
+group by order_id
 having count(*) > 1
 
 
