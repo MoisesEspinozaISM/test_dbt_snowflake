@@ -2,13 +2,16 @@ version: 2
 
 models:
   - name: stg_customers
-    description: "Clientes de TPCH limpiados"
+    description: "Clientes limpias de TPCH"
     columns:
       - name: customer_id
-        description: "ID del cliente"
         tests:
           - not_null
           - unique
-      - name: customer_name
-        description: "Nombre del cliente"
-
+  - name: stg_orders
+    description: "Órdenes limpias de TPCH"
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
