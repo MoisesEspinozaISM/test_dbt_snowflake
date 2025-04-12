@@ -15,3 +15,4 @@ Try running the following commands:
 - Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
 Este proyecto usa CI/CD con dbt build y docs
 🔁 Publicando primera versión de la documentación
+🔄 Fix: usar GITHUB_TOKEN para el push
