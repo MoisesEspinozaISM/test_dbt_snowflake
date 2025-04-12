@@ -16,3 +16,4 @@ Try running the following commands:
 Este proyecto usa CI/CD con dbt build y docs
 🔁 Publicando primera versión de la documentación
 🔄 Fix: usar GITHUB_TOKEN para el push
+🔧 Fix de permisos en GITHUB_TOKEN
