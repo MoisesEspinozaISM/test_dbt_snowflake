@@ -9,6 +9,6 @@ SELECT
     o.total_price,
     c.customer_name,
     c.nation_id
-FROM dbt_sandbox.public.stg_orders o
-LEFT JOIN dbt_sandbox.public.stg_customers c
+FROM dbt_sandbox.public_staging.stg_orders o
+LEFT JOIN dbt_sandbox.public_staging.stg_customers c
   ON o.customer_id = c.customer_id
