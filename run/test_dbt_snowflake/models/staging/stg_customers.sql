@@ -1,5 +1,5 @@
 
-  create or replace   view dbt_sandbox.public_public.stg_customers
+  create or replace   view dbt_sandbox.public.stg_customers
   
    as (
     
