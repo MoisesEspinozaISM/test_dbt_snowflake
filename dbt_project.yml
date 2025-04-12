@@ -1,16 +1,9 @@
+name: 'test_dbt_snowflake'   # Nombre del proyecto
+version: '1.0.0'             # Versión del proyecto
 
-# Name your project! Project names should contain only lowercase characters
-# and underscores. A good package name should reflect your organization's
-# name or the intended use of these models
-name: 'test_dbt_snowflake'
-version: '1.0.0'
+profile: 'test_dbt_snowflake'  # Nombre del profile a usar desde ~/.dbt/profiles.yml
 
-# This setting configures which "profile" dbt uses for this project.
-profile: 'test_dbt_snowflake'
-
-# These configurations specify where dbt should look for different types of files.
-# The `model-paths` config, for example, states that models in this project can be
-# found in the "models/" directory. You probably won't need to change these!
+# Rutas estándar para que dbt encuentre tus archivos
 model-paths: ["models"]
 analysis-paths: ["analyses"]
 test-paths: ["tests"]
@@ -18,19 +11,35 @@ seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
-clean-targets:         # directories to be removed by `dbt clean`
+# Carpetas que se limpian con dbt clean
+clean-targets:
   - "target"
   - "dbt_packages"
 
-
-# Configuring models
-# Full documentation: https://docs.getdbt.com/docs/configuring-models
-
-# In this example config, we tell dbt to build all models in the example/
-# directory as views. These settings can be overridden in the individual model
-# files using the `{{ config(...) }}` macro.
+# Configuración por defecto para modelos
 models:
   test_dbt_snowflake:
-    # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
+
+    # Capa de staging
+    staging:
+      +materialized: table      # ⬅️ por defecto crea tabla
+      +schema: staging          # ⬅️ esquema donde se crean las tablas de staging
+
+    # Capa silver
+    silver:
+      +materialized: table
+      +schema: silver
+
+    # Capa gold
+    gold:
+      +materialized: table
+      +schema: gold
+
+    # Puedes añadir más dominios si quieres separar por temas
+    # ventas:
+    #   +materialized: table
+    #   +schema: gold_ventas
+
+# Variables globales para usar en tus macros si necesitas
+# vars:
+#   my_var: "valor"
