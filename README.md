@@ -1,1 +1,0 @@
-Rama para documentación dbt
