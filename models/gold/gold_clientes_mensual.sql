@@ -1,6 +1,5 @@
 {{ config(
     materialized='table',
-    schema='public',
     alias='gold_clientes_mensual'
 ) }}
 

@@ -1,6 +1,5 @@
 {{ config(
     materialized='view',
-    schema='public',
     alias='silver_orders_enriched'
 ) }}
 

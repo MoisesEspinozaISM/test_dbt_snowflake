@@ -1,6 +1,5 @@
 {{ config(
     materialized='view',
-    schema='public',
     alias='stg_lineitems'
 ) }}
 
