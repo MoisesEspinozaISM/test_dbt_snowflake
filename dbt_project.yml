@@ -26,39 +26,52 @@ models:
     ventas:
       staging:
         +schema: staging
+        +materialized: table
       silver:
         +schema: silver
+        +materialized: table
       gold:
         +schema: gold
+        +materialized: table
 
     clientes:
       staging:
         +schema: staging
+        +materialized: table
       gold:
         +schema: gold
+        +materialized: table
 
     stock:
       staging:
         +schema: staging
+        +materialized: table
       silver:
         +schema: silver
+        +materialized: table
 
     supply:
       staging:
         +schema: staging
+        +materialized: table
       silver:
         +schema: silver
+        +materialized: table
 
     finanzas:
       staging:
         +schema: staging
+        +materialized: table
       gold:
         +schema: gold
+        +materialized: table
 
     comercial:
       silver:
         +schema: silver
+        +materialized: table
 
     mkt:
       gold:
         +schema: gold
+        +materialized: table
