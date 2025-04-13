@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: gold_clientes_mensual
+    description: "Resumen mensual de ventas por cliente"
+    columns:
+      - name: cliente_mes
+        tests:
+          - not_null
+          - unique
