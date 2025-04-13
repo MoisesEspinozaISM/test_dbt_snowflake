@@ -7,5 +7,4 @@ SELECT
     o.CUSTOMER_ID,
     o.ORDER_DATE,
     o.TOTAL_PRICE
-FROM {{ source('snowflake_sample_data', 'orders') }} o
-LIMIT 10
+FROM {{ source('snowflake_sample_data', 'orders') }} 
