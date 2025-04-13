@@ -1,6 +1,5 @@
 name: 'test_dbt_snowflake'
 version: '1.0.0'
-
 profile: 'test_dbt_snowflake'
 
 model-paths: ["models"]
@@ -13,12 +12,3 @@ snapshot-paths: ["snapshots"]
 clean-targets:
   - "target"
   - "dbt_packages"
-
-dispatch:
-  - macro_namespace: dbt
-    search_order: ['test_dbt_snowflake', 'dbt']
-
-models:
-  test_dbt_snowflake:
-    +database: "{{ generate_database_name(None, this) }}"
-    +schema: "{{ generate_schema_name(None, this) }}"
