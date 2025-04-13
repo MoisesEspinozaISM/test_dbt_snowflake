@@ -1,9 +1,8 @@
-name: 'test_dbt_snowflake'   # Nombre del proyecto
-version: '1.0.0'             # Versión del proyecto
+name: 'test_dbt_snowflake'
+version: '1.0.0'
 
-profile: 'test_dbt_snowflake'  # Nombre del profile a usar desde ~/.dbt/profiles.yml
+profile: 'test_dbt_snowflake'
 
-# Rutas estándar para que dbt encuentre tus archivos
 model-paths: ["models"]
 analysis-paths: ["analyses"]
 test-paths: ["tests"]
@@ -11,35 +10,55 @@ seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
-# Carpetas que se limpian con dbt clean
 clean-targets:
   - "target"
   - "dbt_packages"
 
-# Configuración por defecto para modelos
+dispatch:
+  - macro_namespace: dbt
+    search_order: ['test_dbt_snowflake', 'dbt']
+
 models:
   test_dbt_snowflake:
+    +materialized: table
+    +generate_database_name: "{{ generate_database_name }}"
 
-    # Capa de staging
-    staging:
-      +materialized: table      # ⬅️ por defecto crea tabla
-      +schema: staging          # ⬅️ esquema donde se crean las tablas de staging
+    ventas:
+      staging:
+        +schema: staging
+      silver:
+        +schema: silver
+      gold:
+        +schema: gold
 
-    # Capa silver
-    silver:
-      +materialized: table
-      +schema: silver
+    clientes:
+      staging:
+        +schema: staging
+      gold:
+        +schema: gold
 
-    # Capa gold
-    gold:
-      +materialized: table
-      +schema: gold
+    stock:
+      staging:
+        +schema: staging
+      silver:
+        +schema: silver
 
-    # Puedes añadir más dominios si quieres separar por temas
-    # ventas:
-    #   +materialized: table
-    #   +schema: gold_ventas
+    supply:
+      staging:
+        +schema: staging
+      silver:
+        +schema: silver
 
-# Variables globales para usar en tus macros si necesitas
-# vars:
-#   my_var: "valor"
+    finanzas:
+      staging:
+        +schema: staging
+      gold:
+        +schema: gold
+
+    comercial:
+      silver:
+        +schema: silver
+
+    mkt:
+      gold:
+        +schema: gold
