@@ -5,8 +5,9 @@
 ) }}
 
 SELECT 
-    o.ORDER_ID,
-    o.CUSTOMER_ID,
-    o.ORDER_DATE,
-    o.TOTAL_PRICE
+    O_ORDERKEY     AS order_id,
+    O_CUSTKEY      AS customer_id,
+    O_ORDERDATE    AS order_date,
+    O_TOTALPRICE   AS total_price
 FROM {{ source('snowflake_sample_data', 'orders') }}
+
