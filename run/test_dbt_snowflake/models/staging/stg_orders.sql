@@ -1,5 +1,5 @@
 
-  create or replace   view dbt_sandbox.public_staging.stg_orders
+  create or replace   view dbt_sandbox.staging.stg_orders
   
    as (
     
