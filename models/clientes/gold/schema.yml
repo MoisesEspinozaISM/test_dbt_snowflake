@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: gold_segmentacion_clientes
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - customer_id
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+      - name: segmento_cliente
+        tests:
+          - not_null
