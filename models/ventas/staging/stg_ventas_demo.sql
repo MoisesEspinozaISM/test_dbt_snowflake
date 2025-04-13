@@ -1,8 +1,6 @@
-{{ config(
-    materialized='table'
-) }}
+{{ config(materialized='table') }}
 
-SELECT
+SELECT 
     o.ORDER_ID,
     o.CUSTOMER_ID,
     o.ORDER_DATE,
