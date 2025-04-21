@@ -1,0 +1,9 @@
+
+
+SELECT
+    MATNR,
+    VOLEH,
+    VOLUM,
+    MTART,
+    MATKL
+FROM STAGING_RD_HT_GT.SAP.mara
