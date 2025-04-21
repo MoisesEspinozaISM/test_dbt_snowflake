@@ -1,5 +1,4 @@
 dbt_modules/
-target/
 logs/
 .env
 .envrc
