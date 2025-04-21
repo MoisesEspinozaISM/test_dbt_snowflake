@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: sapprd
+    database: STAGING_RD_HT_GT
+    schema: SAP
+    tables:
+      - name: mara
+      - name: marc
+      - name: makt
+      - name: t023t
