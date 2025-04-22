@@ -1,29 +1,29 @@
-version: 2
+# version: 2
 
-models:
-  - name: materiales_enriquecidos
-    description: Enriquecimiento de materiales tipo ZFER con información de planta, descripción y grupo.
-    columns:
-      - name: MATNR
-        description: Código del material.
-        tests:
-          - not_null
-          - unique
-      - name: VOLEH
-        description: Unidad de volumen.
-        tests:
-          - not_null
-          - accepted_values:
-              values: ['L', 'ML']
-      - name: VOLUM
-        description: Volumen del producto.
-        tests:
-          - not_null
-      - name: WERKS
-        description: Planta.
-        tests:
-          - not_null
-      - name: MAKTX
-        description: Descripción del material.
-      - name: WGBEZ
-        description: Grupo de artículo.
+# models:
+#   - name: materiales_enriquecidos
+#     description: Enriquecimiento de materiales tipo ZFER con información de planta, descripción y grupo.
+#     columns:
+#       - name: MATNR
+#         description: Código del material.
+#         tests:
+#           - not_null
+#           - unique
+#       - name: VOLEH
+#         description: Unidad de volumen.
+#         tests:
+#           - not_null
+#           - accepted_values:
+#               values: ['L', 'ML']
+#       - name: VOLUM
+#         description: Volumen del producto.
+#         tests:
+#           - not_null
+#       - name: WERKS
+#         description: Planta.
+#         tests:
+#           - not_null
+#       - name: MAKTX
+#         description: Descripción del material.
+#       - name: WGBEZ
+#         description: Grupo de artículo.
