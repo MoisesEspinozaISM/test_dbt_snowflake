@@ -1,6 +1,0 @@
-
-
-SELECT
-    MATNR,
-    WERKS
-FROM STAGING_RD_HT_GT.SAP.marc
