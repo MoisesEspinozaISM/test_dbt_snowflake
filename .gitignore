@@ -4,3 +4,9 @@ logs/
 .envrc
 __pycache__/
 
+# Ignora todo el contenido de target/
+target/*
+# ¡EXCEPTO! estos dos archivos importantes
+!target/manifest.json
+!target/catalog.json
+
